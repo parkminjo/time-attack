@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./App.css";
 import MedalList from "./components/MedalList";
 import MedalForm from "./components/MedalForm";
-import { useEffect } from "react";
 import RadioButton from "./components/RadioButton";
 
 function App() {
   const [medalList, setMedalList] = useState([]);
 
   const [sortType, setSortType] = useState("gold");
+
   const getSortedMedal = () => {
     if (sortType === "gold") {
       const sortedMedalList = [...medalList].sort((a, b) => b.gold - a.gold);
@@ -17,7 +17,6 @@ function App() {
       const sortedMedalList = [...medalList].sort(
         (a, b) => b.gold + b.silver + b.bronze - a.gold + a.silver + a.bronze
       );
-      console.log(sortedMedalList);
       return sortedMedalList;
     }
   };
@@ -28,7 +27,7 @@ function App() {
 
   /** UI */
   return (
-    <div>
+    <div className="container">
       <h1>2024 파리올림픽</h1>
       <MedalForm medalList={medalList} setMedalList={setMedalList}></MedalForm>
       <RadioButton sortType={sortType} setSortType={setSortType}></RadioButton>

@@ -63,7 +63,7 @@ function MedalForm({ medalList, setMedalList }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="country">
           국가명
           <input

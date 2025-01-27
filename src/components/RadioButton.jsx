@@ -7,8 +7,8 @@ function RadioButton({ sortType, setSortType }) {
         <input
           type="radio"
           id="gold-sort"
-          value="gold"
           name="sort"
+          value="gold"
           checked={sortType === "gold"}
           onChange={(e) => {
             setSortType(e.target.value);
@@ -20,8 +20,8 @@ function RadioButton({ sortType, setSortType }) {
         <input
           type="radio"
           id="total-sort"
-          value="total"
           name="sort"
+          value="total"
           checked={sortType === "total"}
           onChange={(e) => setSortType(e.target.value)}
         />
