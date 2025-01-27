@@ -15,7 +15,7 @@ function App() {
       return sortedMedalList;
     } else {
       const sortedMedalList = [...medalList].sort(
-        (a, b) => b.gold + b.silver + b.bronze - a.gold + a.silver + a.bronze
+        (a, b) => b.gold + b.silver + b.bronze - (a.gold + a.silver + a.bronze)
       );
       return sortedMedalList;
     }
@@ -31,7 +31,7 @@ function App() {
       <h1>2024 파리올림픽</h1>
       <MedalForm medalList={medalList} setMedalList={setMedalList}></MedalForm>
       <RadioButton sortType={sortType} setSortType={setSortType}></RadioButton>
-      {checkList && <p>"메달을 추적하세요"</p>}
+      {checkList && <p>메달을 추적하세요"</p>}
       {checkList || (
         <MedalList
           medalList={sortedMedalList}
