@@ -5,6 +5,12 @@ function MedalForm({ medalList, setMedalList }) {
   const [gold, setGold] = useState(0);
   const [silver, setSilver] = useState(0);
   const [bronze, setBronze] = useState(0);
+  const reset = () => {
+    setCountry("");
+    setGold(0);
+    setSilver(0);
+    setBronze(0);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +23,6 @@ function MedalForm({ medalList, setMedalList }) {
       alert("이미 추가된 나라입니다");
       return;
     }
-
-    const reset = () => {
-      setCountry("");
-      setGold(0);
-      setSilver(0);
-      setBronze(0);
-    };
 
     const newMedalList = [
       ...medalList,
